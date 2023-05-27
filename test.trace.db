@@ -1,0 +1,681 @@
+2023-05-22 19:27:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]java.io.FileReader@4517d9a3"; SQL statement:
+java.io.FileReader@4517d9a3 [42000-214]
+2023-05-22 19:28:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]java.io.BufferedReader@4517d9a3"; SQL statement:
+java.io.BufferedReader@4517d9a3 [42000-214]
+2023-05-22 19:33:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]java.io.FileReader@4517d9a3"; SQL statement:
+java.io.FileReader@4517d9a3 [42000-214]
+2023-05-22 19:40:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]nullCREATE TABLE worker (\000d\000a    ID INT PRIMARY KEY,\000d\000a    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),\000d\000a    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),\000d\000a    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,\000d\000a  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)\000d\000a)\000d\000aCREATE TABLE client (\000d\000a    ID INT PRIMARY KEY,\000d\000a    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000)\000d\000a)\000d\000aCREATE TABLE project(\000d\000a    ID INT PRIMARY KEY,\000d\000a    CLIENT_ID INT,\000d\000a    START_DATE DATE,\000d\000a    FINISH_DATE DATE,\000d\000a    FOREIGN KEY (CLIENT_ID) REFERENCES client(ID)\000d\000a)\000d\000aCREATE TABLE project_worker (\000d\000a    PROJECT_ID INT,\000d\000a    WORKER_ID INT,\000d\000a    PRIMARY KEY (PROJECT_ID, WORKER_ID),\000d\000a    FOREIGN KEY (PROJECT_ID) REFERENCES project(ID),\000d\000a    FOREIGN KEY (WORKER_ID) REFERENCES worker(ID)\000d\000a)"; SQL statement:
+nullCREATE TABLE worker (
+    ID INT PRIMARY KEY,
+    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),
+    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),
+    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,
+  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)
+)
+CREATE TABLE client (
+    ID INT PRIMARY KEY,
+    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000)
+)
+CREATE TABLE project(
+    ID INT PRIMARY KEY,
+    CLIENT_ID INT,
+    START_DATE DATE,
+    FINISH_DATE DATE,
+    FOREIGN KEY (CLIENT_ID) REFERENCES client(ID)
+)
+CREATE TABLE project_worker (
+    PROJECT_ID INT,
+    WORKER_ID INT,
+    PRIMARY KEY (PROJECT_ID, WORKER_ID),
+    FOREIGN KEY (PROJECT_ID) REFERENCES project(ID),
+    FOREIGN KEY (WORKER_ID) REFERENCES worker(ID)
+) [42000-214]
+2023-05-22 19:41:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]nullCREATE TABLE worker (\000d\000a    ID INT PRIMARY KEY,\000d\000a    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),\000d\000a    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),\000d\000a    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,\000d\000a  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)\000d\000a)\000d\000aCREATE TABLE client (\000d\000a    ID INT PRIMARY KEY,\000d\000a    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000)\000d\000a)\000d\000aCREATE TABLE project(\000d\000a    ID INT PRIMARY KEY,\000d\000a    CLIENT_ID INT,\000d\000a    START_DATE DATE,\000d\000a    FINISH_DATE DATE,\000d\000a    FOREIGN KEY (CLIENT_ID) REFERENCES client(ID)\000d\000a)\000d\000aCREATE TABLE project_worker (\000d\000a    PROJECT_ID INT,\000d\000a    WORKER_ID INT,\000d\000a    PRIMARY KEY (PROJECT_ID, WORKER_ID),\000d\000a    FOREIGN KEY (PROJECT_ID) REFERENCES project(ID),\000d\000a    FOREIGN KEY (WORKER_ID) REFERENCES worker(ID)\000d\000a)"; SQL statement:
+nullCREATE TABLE worker (
+    ID INT PRIMARY KEY,
+    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),
+    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),
+    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,
+  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)
+)
+CREATE TABLE client (
+    ID INT PRIMARY KEY,
+    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000)
+)
+CREATE TABLE project(
+    ID INT PRIMARY KEY,
+    CLIENT_ID INT,
+    START_DATE DATE,
+    FINISH_DATE DATE,
+    FOREIGN KEY (CLIENT_ID) REFERENCES client(ID)
+)
+CREATE TABLE project_worker (
+    PROJECT_ID INT,
+    WORKER_ID INT,
+    PRIMARY KEY (PROJECT_ID, WORKER_ID),
+    FOREIGN KEY (PROJECT_ID) REFERENCES project(ID),
+    FOREIGN KEY (WORKER_ID) REFERENCES worker(ID)
+) [42000-214]
+2023-05-22 19:50:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE worker ([*]"; expected "identifier"; SQL statement:
+CREATE TABLE worker ( [42001-214]
+2023-05-22 19:55:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000))[*]CREATE TABLE client (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000))CREATE TABLE project(    ID INT PRIMARY KEY,    CLIENT_ID INT,    START_DATE DATE,    FINISH_DATE DATE,    FOREIGN KEY (CLIENT_ID) REFERENCES client(ID))CREATE TABLE project_worker (    PROJECT_ID INT,    WORKER_ID INT,    PRIMARY KEY (PROJECT_ID, WORKER_ID),    FOREIGN KEY (PROJECT_ID) REFERENCES project(ID),    FOREIGN KEY (WORKER_ID) REFERENCES worker(ID))"; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000))CREATE TABLE client (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000))CREATE TABLE project(    ID INT PRIMARY KEY,    CLIENT_ID INT,    START_DATE DATE,    FINISH_DATE DATE,    FOREIGN KEY (CLIENT_ID) REFERENCES client(ID))CREATE TABLE project_worker (    PROJECT_ID INT,    WORKER_ID INT,    PRIMARY KEY (PROJECT_ID, WORKER_ID),    FOREIGN KEY (PROJECT_ID) REFERENCES project(ID),    FOREIGN KEY (WORKER_ID) REFERENCES worker(ID)) [42000-214]
+2023-05-22 19:56:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000))[*]CREATE TABLE client (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000))CREATE TABLE project(    ID INT PRIMARY KEY,    CLIENT_ID INT,    START_DATE DATE,    FINISH_DATE DATE,    FOREIGN KEY (CLIENT_ID) REFERENCES client(ID))CREATE TABLE project_worker (    PROJECT_ID INT,    WORKER_ID INT,    PRIMARY KEY (PROJECT_ID, WORKER_ID),    FOREIGN KEY (PROJECT_ID) REFERENCES project(ID),    FOREIGN KEY (WORKER_ID) REFERENCES worker(ID))"; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000))CREATE TABLE client (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000))CREATE TABLE project(    ID INT PRIMARY KEY,    CLIENT_ID INT,    START_DATE DATE,    FINISH_DATE DATE,    FOREIGN KEY (CLIENT_ID) REFERENCES client(ID))CREATE TABLE project_worker (    PROJECT_ID INT,    WORKER_ID INT,    PRIMARY KEY (PROJECT_ID, WORKER_ID),    FOREIGN KEY (PROJECT_ID) REFERENCES project(ID),    FOREIGN KEY (WORKER_ID) REFERENCES worker(ID)) [42000-214]
+2023-05-22 20:02:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-22 20:24:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-22 20:25:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000))[*]CREATE TABLE client (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000))"; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000))CREATE TABLE client (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000)) [42000-214]
+2023-05-22 20:25:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000))[*]CREATE TABLE client (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000))"; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000))CREATE TABLE client (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000)) [42000-214]
+2023-05-22 20:28:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PROJECT" already exists; SQL statement:
+CREATE TABLE project(    ID INT PRIMARY KEY,    CLIENT_ID INT,    START_DATE DATE,    FINISH_DATE DATE,    FOREIGN KEY (CLIENT_ID) REFERENCES client(ID)) [42101-214]
+2023-05-22 20:29:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PROJECT" already exists; SQL statement:
+CREATE TABLE project(    ID INT PRIMARY KEY,    CLIENT_ID INT,    START_DATE DATE,    FINISH_DATE DATE,    FOREIGN KEY (CLIENT_ID) REFERENCES client(ID)) [42101-214]
+2023-05-22 20:29:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "null" for parameter "SQL" [90008-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:298)
+	at org.h2.jdbc.JdbcConnection.translateSQL(JdbcConnection.java:1207)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:185)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
+	at org.example.Database.executeUpdate(Database.java:25)
+	at org.example.DatabaseInitService.main(DatabaseInitService.java:34)
+2023-05-22 20:37:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PROJECT_WORKER" already exists; SQL statement:
+CREATE TABLE project_worker (    PROJECT_ID INT,    WORKER_ID INT,    PRIMARY KEY (PROJECT_ID, WORKER_ID),    FOREIGN KEY (PROJECT_ID) REFERENCES project(ID),    FOREIGN KEY (WORKER_ID) REFERENCES worker(ID)) [42101-214]
+2023-05-22 20:37:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PROJECT" already exists; SQL statement:
+CREATE TABLE project(    ID INT PRIMARY KEY,    CLIENT_ID INT,    START_DATE DATE,    FINISH_DATE DATE,    FOREIGN KEY (CLIENT_ID) REFERENCES client(ID)) [42101-214]
+2023-05-22 20:37:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENT" already exists; SQL statement:
+CREATE TABLE client (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000)) [42101-214]
+2023-05-22 20:38:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-22 20:38:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENT" already exists; SQL statement:
+CREATE TABLE client (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000)) [42101-214]
+2023-05-22 20:38:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-22 20:40:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "WORKER" because "CONSTRAINT_5B3" depends on it; SQL statement:
+DROP TABLE worker [90107-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:97)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:121)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
+	at org.example.Database.executeUpdate(Database.java:25)
+	at org.example.DatabaseInitService.main(DatabaseInitService.java:29)
+2023-05-22 20:41:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE [*]TABLE worker;"; expected "identifier"; SQL statement:
+DELETE TABLE worker; [42001-214]
+2023-05-22 20:41:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "WORKER" because "CONSTRAINT_5B3" depends on it; SQL statement:
+DROP TABLE worker [90107-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:97)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:121)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
+	at org.example.Database.executeUpdate(Database.java:25)
+	at org.example.DatabaseInitService.main(DatabaseInitService.java:29)
+2023-05-22 20:42:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "CLIENT" because "CONSTRAINT_18" depends on it; SQL statement:
+DROP TABLE client [90107-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:97)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:121)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
+	at org.example.Database.executeUpdate(Database.java:25)
+	at org.example.DatabaseInitService.main(DatabaseInitService.java:29)
+2023-05-22 20:42:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "PROJECT" because "CONSTRAINT_5B" depends on it; SQL statement:
+DROP TABLE project [90107-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:97)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:121)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:143)
+	at org.example.Database.executeUpdate(Database.java:25)
+	at org.example.DatabaseInitService.main(DatabaseInitService.java:29)
+2023-05-22 20:43:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PROJECT_WORKER" not found; SQL statement:
+DROP TABLE project_worker [42102-214]
+2023-05-22 20:44:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PROJECT_WORKER" already exists; SQL statement:
+CREATE TABLE project_worker (    PROJECT_ID INT,    WORKER_ID INT,    PRIMARY KEY (PROJECT_ID, WORKER_ID),    FOREIGN KEY (PROJECT_ID) REFERENCES project(ID),    FOREIGN KEY (WORKER_ID) REFERENCES worker(ID)) [42101-214]
+2023-05-22 20:44:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-25 18:44:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT clientname, projectproject_countFROM client         [*]JOIN  (    SELECT client_id, COUNT(id) AS project_count    FROM project    GROUP BY client_id)    project ON clientid = projectclient_idWHERE projectproject_count >= (    SELECT MAX(project_count)    FROM (             SELECT COUNT(id) AS project_count             FROM project             GROUP BY client_id         ) AS max_project_count);"; SQL statement:
+SELECT clientname, projectproject_countFROM client         JOIN  (    SELECT client_id, COUNT(id) AS project_count    FROM project    GROUP BY client_id)    project ON clientid = projectclient_idWHERE projectproject_count >= (    SELECT MAX(project_count)    FROM (             SELECT COUNT(id) AS project_count             FROM project             GROUP BY client_id         ) AS max_project_count); [42000-214]
+2023-05-25 18:45:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT clientname, projectproject_countFROM client [*]JOIN  (    SELECT client_id, COUNT(id) AS project_count    FROM project    GROUP BY client_id)    project ON clientid = projectclient_idWHERE projectproject_count >= (    SELECT MAX(project_count)    FROM (             SELECT COUNT(id) AS project_count             FROM project             GROUP BY client_id         ) AS max_project_count);"; SQL statement:
+SELECT clientname, projectproject_countFROM client JOIN  (    SELECT client_id, COUNT(id) AS project_count    FROM project    GROUP BY client_id)    project ON clientid = projectclient_idWHERE projectproject_count >= (    SELECT MAX(project_count)    FROM (             SELECT COUNT(id) AS project_count             FROM project             GROUP BY client_id         ) AS max_project_count); [42000-214]
+2023-05-25 18:46:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT clientname, projectproject_countFROM client [*]JOIN  (    SELECT client_id, COUNT(id) AS project_count    FROM project    GROUP BY client_id) project ON clientid = projectclient_idWHERE projectproject_count >= (    SELECT MAX(project_count)    FROM ( SELECT COUNT(id) AS project_count FROM project GROUP BY client_id ) AS max_project_count);"; SQL statement:
+SELECT clientname, projectproject_countFROM client JOIN  (    SELECT client_id, COUNT(id) AS project_count    FROM project    GROUP BY client_id) project ON clientid = projectclient_idWHERE projectproject_count >= (    SELECT MAX(project_count)    FROM ( SELECT COUNT(id) AS project_count FROM project GROUP BY client_id ) AS max_project_count); [42000-214]
+2023-05-25 18:48:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT clientname, projectproject_countFROM client         [*]JOIN  (    SELECT client_id, COUNT(id) AS project_count    FROM project    GROUP BY client_id)    project ON clientid = projectclient_idWHERE projectproject_count >= (    SELECT MAX(project_count)    FROM (             SELECT COUNT(id) AS project_count             FROM project             GROUP BY client_id         ) AS max_project_count);"; SQL statement:
+SELECT clientname, projectproject_countFROM client         JOIN  (    SELECT client_id, COUNT(id) AS project_count    FROM project    GROUP BY client_id)    project ON clientid = projectclient_idWHERE projectproject_count >= (    SELECT MAX(project_count)    FROM (             SELECT COUNT(id) AS project_count             FROM project             GROUP BY client_id         ) AS max_project_count); [42000-214]
+2023-05-25 18:52:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT client.name, project.project_countFROM client         [*]JOIN  (    SELECT client_id, COUNT(id) AS project_count    FROM project    GROUP BY client_id)    project ON client.id = project.client_idWHERE project.project_count >= (    SELECT MAX(project_count)    FROM (             SELECT COUNT(id) AS project_count             FROM project             GROUP BY client_id         ) AS max_project_count);"; SQL statement:
+SELECT client.name, project.project_countFROM client         JOIN  (    SELECT client_id, COUNT(id) AS project_count    FROM project    GROUP BY client_id)    project ON client.id = project.client_idWHERE project.project_count >= (    SELECT MAX(project_count)    FROM (             SELECT COUNT(id) AS project_count             FROM project             GROUP BY client_id         ) AS max_project_count); [42000-214]
+2023-05-25 18:52:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "Ctepan" [22018-214]
+2023-05-25 19:38:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "project_prices" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at org.example.DatabaseQueryService.findProjectPrices(DatabaseQueryService.java:107)
+	at org.example.Main.main(Main.java:25)
+2023-05-25 19:39:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "project_prices" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at org.example.DatabaseQueryService.findProjectPrices(DatabaseQueryService.java:107)
+	at org.example.Main.main(Main.java:25)
+2023-05-25 19:39:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "project_prices" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at org.example.DatabaseQueryService.findProjectPrices(DatabaseQueryService.java:107)
+	at org.example.Main.main(Main.java:25)
+2023-05-25 19:40:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "PROJECT_PRICES" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at org.example.DatabaseQueryService.findProjectPrices(DatabaseQueryService.java:107)
+	at org.example.Main.main(Main.java:25)
+2023-05-25 19:47:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "Ctepan" [22018-214]
+2023-05-25 19:50:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "Ctepan" [22018-214]
+2023-05-25 19:51:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "Ctepan" [22018-214]
+2023-05-25 19:57:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-25 19:59:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-25 19:59:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-25 20:00:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENT" already exists; SQL statement:
+CREATE TABLE client (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000)) [42101-214]
+2023-05-25 20:00:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PROJECT" already exists; SQL statement:
+CREATE TABLE project(    ID INT PRIMARY KEY,    CLIENT_ID INT,    START_DATE DATE,    FINISH_DATE DATE,    FOREIGN KEY (CLIENT_ID) REFERENCES client(ID)) [42101-214]
+2023-05-25 20:00:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PROJECT_WORKER" already exists; SQL statement:
+CREATE TABLE project_worker (    PROJECT_ID INT,    WORKER_ID INT,    PRIMARY KEY (PROJECT_ID, WORKER_ID),    FOREIGN KEY (PROJECT_ID) REFERENCES project(ID),    FOREIGN KEY (WORKER_ID) REFERENCES worker(ID)) [42101-214]
+2023-05-25 20:00:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-25 20:01:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "Ctepan" [22018-214]
+2023-05-25 20:04:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-25 20:05:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-25 20:05:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "Ctepan" [22018-214]
+2023-05-25 20:06:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "Ctepan" [22018-214]
+2023-05-25 20:08:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "salary" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:337)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:71)
+	at org.example.Main.main(Main.java:18)
+2023-05-25 20:09:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "salary" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:337)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:71)
+	at org.example.Main.main(Main.java:18)
+2023-05-25 20:14:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-25 20:15:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-25 20:19:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "salary" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:337)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:71)
+	at org.example.Main.main(Main.java:18)
+2023-05-25 20:19:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "salary" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:337)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:71)
+	at org.example.Main.main(Main.java:18)
+2023-05-25 20:21:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-25 20:22:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WORKER" already exists; SQL statement:
+CREATE TABLE worker (    ID INT PRIMARY KEY,    NAME VARCHAR(1000) NOT NULL CHECK (LENGTH(NAME) >= 2 AND LENGTH(NAME) <= 1000),    birthday DATE NOT NULL CHECK (YEAR(birthday) >= 1900),    LEVEL VARCHAR(20) CHECK (LEVEL IN ('Trainee', 'Junior', 'Middle', 'Senior')) NOT NULL,  SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)) [42101-214]
+2023-05-25 20:26:30 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-214]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
+	at org.h2.server.web.WebApp.test(WebApp.java:972)
+	at org.h2.server.web.WebApp.process(WebApp.java:241)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:152)
+	at org.h2.server.web.WebThread.run(WebThread.java:101)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:510)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 16 more
+2023-05-25 20:26:32 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-214]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:152)
+	at org.h2.server.web.WebThread.run(WebThread.java:101)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:510)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 16 more
+2023-05-25 20:27:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "salary" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:337)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:71)
+	at org.example.Main.main(Main.java:18)
+2023-05-25 20:29:13 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]" [50000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at org.example.Database.<init>(Database.java:12)
+	at org.example.Database.<clinit>(Database.java:6)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:67)
+	at org.example.Main.main(Main.java:18)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]" [50000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:178)
+	at org.h2.mvstore.FileStore.open(FileStore.java:128)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
+	... 15 more
+2023-05-25 20:29:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "salary" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:337)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:71)
+	at org.example.Main.main(Main.java:18)
+2023-05-25 20:30:39 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]" [50000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at org.example.Database.<init>(Database.java:12)
+	at org.example.Database.<clinit>(Database.java:6)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:67)
+	at org.example.Main.main(Main.java:18)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]" [50000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:178)
+	at org.h2.mvstore.FileStore.open(FileStore.java:128)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
+	... 15 more
+2023-05-25 20:30:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "salary" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:337)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:71)
+	at org.example.Main.main(Main.java:18)
+2023-05-25 20:32:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "Ctepan" [22018-214]
+2023-05-25 20:34:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "Ctepan" [22018-214]
+2023-05-27 17:38:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "salary" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:337)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:71)
+	at org.example.Main.main(Main.java:18)
+2023-05-27 17:40:32 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]" [50000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at org.example.Database.<init>(Database.java:12)
+	at org.example.Database.<clinit>(Database.java:6)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:67)
+	at org.example.Main.main(Main.java:18)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]" [50000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:178)
+	at org.h2.mvstore.FileStore.open(FileStore.java:128)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
+	... 15 more
+2023-05-27 17:40:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "salary" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getLong(JdbcResultSet.java:745)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:71)
+	at org.example.Main.main(Main.java:18)
+2023-05-27 17:54:06 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]" [50000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at org.example.Database.<init>(Database.java:12)
+	at org.example.Database.<clinit>(Database.java:6)
+	at org.example.DatabaseQueryService.findLongestProject(DatabaseQueryService.java:49)
+	at org.example.Main.main(Main.java:15)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]" [50000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:178)
+	at org.h2.mvstore.FileStore.open(FileStore.java:128)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
+	... 15 more
+2023-05-27 17:54:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "ID" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:337)
+	at org.example.DatabaseQueryService.findLongestProject(DatabaseQueryService.java:53)
+	at org.example.Main.main(Main.java:15)
+2023-05-27 17:55:28 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]" [50000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at org.example.Database.<init>(Database.java:12)
+	at org.example.Database.<clinit>(Database.java:6)
+	at org.example.DatabaseQueryService.findLongestProject(DatabaseQueryService.java:49)
+	at org.example.Main.main(Main.java:15)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]" [50000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:178)
+	at org.h2.mvstore.FileStore.open(FileStore.java:128)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
+	... 15 more
+2023-05-27 17:55:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "ID" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at org.example.DatabaseQueryService.findLongestProject(DatabaseQueryService.java:53)
+	at org.example.Main.main(Main.java:15)
+2023-05-27 17:56:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "ID" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:337)
+	at org.example.DatabaseQueryService.findLongestProject(DatabaseQueryService.java:53)
+	at org.example.Main.main(Main.java:15)
+2023-05-27 18:01:28 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]" [50000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at org.example.Database.<init>(Database.java:12)
+	at org.example.Database.<clinit>(Database.java:6)
+	at org.example.DatabaseQueryService.findYoungestEldestWorker(DatabaseQueryService.java:96)
+	at org.example.Main.main(Main.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]" [50000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: D:/Soft/idea produckt/Modul4/test.mv.db [2.1.214/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:178)
+	at org.h2.mvstore.FileStore.open(FileStore.java:128)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
+	... 15 more
+2023-05-27 18:01:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "type" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at org.example.DatabaseQueryService.findYoungestEldestWorker(DatabaseQueryService.java:100)
+	at org.example.Main.main(Main.java:21)
+2023-05-27 18:02:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "salary" not found [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3518)
+	at org.h2.jdbc.JdbcResultSet.getLong(JdbcResultSet.java:745)
+	at org.example.DatabaseQueryService.findMaxSalaryWorker(DatabaseQueryService.java:76)
+	at org.example.Main.main(Main.java:18)
