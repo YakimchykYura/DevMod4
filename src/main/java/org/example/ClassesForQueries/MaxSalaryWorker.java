@@ -2,9 +2,9 @@ package org.example.ClassesForQueries;
 
 public class MaxSalaryWorker {
     private String name;
-    private Long salary;
+    private int salary;
 
-    public MaxSalaryWorker(String name, Long salary) {
+    public MaxSalaryWorker(String name, int salary) {
         this.name = name;
         this.salary = salary;
     }

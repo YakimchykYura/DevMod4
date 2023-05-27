@@ -15,8 +15,8 @@ public class DatabasePopulateService {
                     query[c] = line;
                     c++;
             }
-            for (int i = 0; i < query.length; i++) {
-                Database.getInstance().executeUpdate(query[i]);
+            for (String s : query) {
+                Database.getInstance().executeUpdate(s);
             }
 
         } catch (IOException e) {

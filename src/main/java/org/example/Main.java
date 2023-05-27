@@ -2,28 +2,29 @@ package org.example;
 
 import org.example.ClassesForQueries.*;
 
-import java.io.IOException;
-import java.sql.SQLException;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws SQLException, IOException {
-//        List<MaxProjectCountClient> maxProjectCountClients = new DatabaseQueryService().findMaxProjectsClient();
-//        System.out.println(maxProjectCountClients.size());
-//        System.out.println(maxProjectCountClients.get(0));
+    public static void main(String[] args) {
+        List<MaxProjectCountClient> maxProjectCountClients = new DatabaseQueryService().findMaxProjectsClient();
+        System.out.println(maxProjectCountClients.size());
+        System.out.println(maxProjectCountClients.get(0));
 
-//        List<LongestProject> list = new DatabaseQueryService().findLongestProject();
-//        System.out.println(list.size());
-//        System.out.println(list.get(0));
-        List<MaxSalaryWorker> list = new DatabaseQueryService().findMaxSalaryWorker();
-        System.out.println(list.size());
-        System.out.println(list.get(0));
-//        List<YoungestEldestWorker> list = new DatabaseQueryService().findYoungestEldestWorker();
-//        System.out.println(list.size());
-//        System.out.println(list.get(0).toString());
+        List<LongestProject> longestProject = new DatabaseQueryService().findLongestProject();
+        System.out.println(longestProject.size());
+        System.out.println(longestProject.get(0));
 
-//        List<ProjectPrices> list = new DatabaseQueryService().findProjectPrices();
-//        System.out.println(list.size());
-//        System.out.println(list.get(0).toString());
+        List<MaxSalaryWorker> maxSalaryWorker = new DatabaseQueryService().findMaxSalaryWorker();
+        System.out.println(maxSalaryWorker.get(0));
+        System.out.println(maxSalaryWorker.get(1));
+        System.out.println(maxSalaryWorker.get(2));
+
+        List<YoungestEldestWorker> youngestEldestWorker = new DatabaseQueryService().findYoungestEldestWorker();
+        System.out.println(youngestEldestWorker.size());
+        System.out.println(youngestEldestWorker.get(0));
+
+        List<ProjectPrices> projectPrices = new DatabaseQueryService().findProjectPrices();
+        System.out.println(projectPrices.size());
+        System.out.println(projectPrices.get(0));
     }
 }
