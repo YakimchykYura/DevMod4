@@ -27,15 +27,9 @@ public class Database {
             throw new RuntimeException(ex);
         }
     }
-    public ResultSet executeQuery(String query) {
-        try(Statement statement = INSTANCE.getCONNECTION().createStatement()) {
-            return statement.executeQuery(query);
-        } catch (SQLException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
     public void closeConnection() {
-        try{CONNECTION.close();
+        try{
+            CONNECTION.close();
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }

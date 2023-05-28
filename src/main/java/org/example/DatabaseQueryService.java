@@ -13,73 +13,76 @@ import java.util.List;
 
 public class DatabaseQueryService {
     private String readFile(String query) {
-        String string = "";
+        StringBuilder string = new StringBuilder();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(query));
             String line;
             while ((line = reader.readLine()) != null) {
-                string += " " + line;
+                string.append(" ").append(line);
             }
         }catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
-       return string;
+       return string.toString();
     }
 
     List<MaxProjectCountClient> findMaxProjectsClient() {
         String query = readFile("src/sql/find_max_projects_client.sql");
         List<MaxProjectCountClient> list = new ArrayList<>();
-        try {
-        Statement statement = Database.getInstance().getCONNECTION().createStatement();
+        try (Statement statement = Database.getInstance().getCONNECTION().createStatement()){
+
         ResultSet result = statement.executeQuery(query);
 
         while (result.next()) {
             MaxProjectCountClient countClient = new MaxProjectCountClient(result.getString("name"), result.getInt("project_count"));
             list.add(countClient);
         }
+            Database.getInstance().closeConnection();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+
         return list;
     }
     List<LongestProject>  findLongestProject() {
         String query = readFile("src/sql/find_longest_project.sql");
         List<LongestProject> list = new ArrayList<>();
-        try {
-            Statement statement = Database.getInstance().getCONNECTION().createStatement();
+        try (Statement statement = Database.getInstance().getCONNECTION().createStatement()) {
             ResultSet result = statement.executeQuery(query);
 
             while (result.next()) {
                 LongestProject longestProject = new LongestProject(result.getInt("ID"), result.getInt("months"));
                 list.add(longestProject);
             }
+            Database.getInstance().closeConnection();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+
         return list;
     }
     List<MaxSalaryWorker> findMaxSalaryWorker() {
         String query = readFile("src/sql/find_max_salary_worker.sql");
         List<MaxSalaryWorker> list = new ArrayList<>();
-        try {
-            Statement statement = Database.getInstance().getCONNECTION().createStatement();
+        try (Statement statement = Database.getInstance().getCONNECTION().createStatement()) {
             ResultSet result = statement.executeQuery(query);
 
             while (result.next()) {
                 MaxSalaryWorker maxSalary = new MaxSalaryWorker(result.getString("name"), result.getInt("salary"));
                 list.add(maxSalary);
             }
+            Database.getInstance().closeConnection();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+
         return list;
     }
     List<YoungestEldestWorker> findYoungestEldestWorker() {
         String query = readFile("src/sql/find_youngest_eldest_workers.sql");
         System.out.println(query);
         List<YoungestEldestWorker> list = new ArrayList<>();
-        try {
-            Statement statement = Database.getInstance().getCONNECTION().createStatement();
+        try (Statement statement = Database.getInstance().getCONNECTION().createStatement()) {
             ResultSet result = statement.executeQuery(query);
 
             while (result.next()) {
@@ -88,8 +91,9 @@ public class DatabaseQueryService {
                         result.getString("birthday"));
                 list.add(worker);
             }
+            Database.getInstance().closeConnection();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         System.out.println(list.get(0));
         return list;
@@ -98,17 +102,17 @@ public class DatabaseQueryService {
         String query = readFile("src/sql/print_project_prices.sql");
         System.out.println(query);
         List<ProjectPrices> list = new ArrayList<>();
-        try {
-            Statement statement = Database.getInstance().getCONNECTION().createStatement();
+        try (Statement statement = Database.getInstance().getCONNECTION().createStatement()) {
             ResultSet result = statement.executeQuery(query);
 
             while (result.next()) {
                 ProjectPrices projectPrices = new ProjectPrices(result.getString("name"),
-                        result.getString("PROJECT_PRICES"));
+                        result.getString("project_prices"));
                 list.add(projectPrices);
             }
+            Database.getInstance().closeConnection();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return list;
     }

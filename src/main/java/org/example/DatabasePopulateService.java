@@ -19,8 +19,9 @@ public class DatabasePopulateService {
                 Database.getInstance().executeUpdate(s);
             }
 
+            Database.getInstance().closeConnection();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
